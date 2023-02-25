@@ -1,0 +1,45 @@
+<mat-card class="header-card-container mat-card-flat rounded-0 h-100 p-0 m-0">
+  <div
+    class="area-title ms-3 d-flex flex-column justify-content-between align-self-center"
+  >
+    <span class="title-label">
+      {{ pageTitle }}
+    </span>
+
+    <div class="area-navigation mt-2">
+      <span *ngFor="let nav of navigationPath; let last = last">
+        <a
+          class="navigation-path"
+          disabled
+          [routerLink]="shouldNavigate ? [nav.linkURL] : ''"
+        >
+          {{ nav.linkName }} <span class="me-1" *ngIf="!last">/</span>
+        </a>
+      </span>
+    </div>
+  </div>
+
+  <div class="area-info d-flex justify-content-evenly align-items-center">
+    <button
+      class="notification"
+      mat-icon-button
+      color="primary"
+      [matBadge]="notificationCounter || 1"
+      matBadgeColor="warn"
+      matBadgeSize="small"
+    >
+      <mat-icon class="notification-icon"> notifications </mat-icon>
+    </button>
+
+    <div class="label-chip">
+      <span class="chip-text text-uppercase">
+        {{ productLabel || 'placeholder' }}
+      </span>
+    </div>
+
+    <img
+      class="user-logo"
+      [src]="userLogo || 'https://via.placeholder.com/50?text=USER'"
+    />
+  </div>
+</mat-card>

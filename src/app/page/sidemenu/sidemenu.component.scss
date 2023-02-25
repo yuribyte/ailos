@@ -1,0 +1,38 @@
+.sidemenu-card-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 100px 50px 1fr 450px;
+  grid-template-areas:
+    'logo'
+    '.'
+    'icons'
+    '.';
+  background-color: #165c7c;
+
+  .area-logo {
+    grid-area: logo;
+  }
+
+  .area-icons {
+    grid-area: icons;
+    margin-right: 6px;
+
+    .icon-menu {
+      font-size: 32px;
+      height: 32px;
+      width: 32px;
+      color: white;
+    }
+  }
+
+  .icon-logo {
+    border-radius: 50%;
+  }
+}
+
+:host ::ng-deep .sidemenu-card-container .mat-ripple {
+  height: 38px;
+  width: 38px;
+  left: calc(50% - 20px) !important;
+  top: calc(50% - 22px) !important;
+}

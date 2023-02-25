@@ -1,0 +1,62 @@
+.header-card-container {
+  max-height: 100px;
+  display: grid;
+  grid-template-columns: auto 1fr 300px;
+  grid-template-rows: auto;
+  grid-template-areas: 'title . info';
+
+  .area-title {
+    grid-area: title;
+
+    .title-label {
+      font-size: 26px;
+      font-weight: 500;
+    }
+
+    .area-navigation {
+      .navigation-path {
+        color: grey;
+        text-decoration: none;
+        cursor: default;
+      }
+    }
+  }
+
+  .area-info {
+    grid-area: info;
+
+    .user-logo {
+      border-radius: 50%;
+    }
+
+    .label-chip {
+      cursor: default;
+      display: inline-block;
+      padding: 6px 12px;
+      border: 2.5px solid #165c7c;
+      border-radius: 20px;
+
+      .chip-text {
+        color: #165c7c;
+        text-align: center;
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.notification {
+  margin-top: 5px;
+
+  .notification-icon {
+    font-size: 32px;
+  }
+}
+
+:host ::ng-deep .mat-ripple {
+  height: 38px;
+  width: 38px;
+  left: calc(50% - 15px) !important;
+  top: calc(50% - 19px) !important;
+}
