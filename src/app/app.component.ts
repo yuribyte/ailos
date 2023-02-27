@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
-import { Select, Store } from '@ngxs/store';
+import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { UserAccountModel } from './core/model/user.model';
 import {
@@ -22,6 +22,11 @@ export class AppComponent {
   hasInvalidData$!: Observable<boolean>;
 
   @Dispatch()
+  private _clearAccountData() {
+    return new AccountStorePayload.ClearState();
+  }
+
+  @Dispatch()
   private _requestAccountInfo() {
     return new AccountStorePayload.RequestAccountInfo();
   }
@@ -33,13 +38,19 @@ export class AppComponent {
     });
   }
 
-  constructor(private _store: Store) {}
-
   handleSelectAccount() {
     this._requestAccountInfo();
   }
 
   handleInvalidData(isFormInvalid: boolean) {
     this._requestValidData(isFormInvalid);
+
+    if (isFormInvalid) {
+      this._listenInvalidData();
+    }
+  }
+
+  private _listenInvalidData() {
+    this._clearAccountData();
   }
 }

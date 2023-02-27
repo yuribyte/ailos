@@ -46,16 +46,17 @@ export class ConsultSearchFormComponent implements OnInit {
 
   ngOnInit(): void {
     this._buildForm();
+    this._formChanges();
   }
 
   handleSubmitForm() {
+    this.form.markAsTouched();
+
     const hasInvalidData = isNaN(this.form.value.cpf);
 
     if (hasInvalidData) {
       this.submitFormValue.emit(Number(this.form.value));
     }
-
-    this.emitFormInvalidData.emit(this.form.invalid);
   }
 
   private _buildForm() {
@@ -70,5 +71,11 @@ export class ConsultSearchFormComponent implements OnInit {
         ]
       ]
     });
+  }
+
+  private _formChanges() {
+    this.form.valueChanges.subscribe(() =>
+      this.emitFormInvalidData.emit(this.form.invalid)
+    );
   }
 }

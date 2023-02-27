@@ -43,11 +43,16 @@ export class AccountStoreSelectors {
 }
 
 export namespace AccountStorePayload {
+  export class ClearState {
+    static readonly type = '[Domains / Account] Clear state';
+  }
+
   export class RequestAccountInfo {
     static readonly type = '[Domain / Account] Request Account Information';
   }
+
   export class RequestValidData {
-    static readonly type = '[Domain / Account Data] Request Account Valid Data';
+    static readonly type = '[Domain / Account] Request Account Valid Data';
     constructor(public payload: { hasInvalidData: boolean }) {}
   }
 }
@@ -59,6 +64,13 @@ export namespace AccountStorePayload {
 @Injectable()
 export class AccountState {
   constructor(private _accountService: AccountService) {}
+
+  @Action([AccountStorePayload.ClearState])
+  clearState({ setState }: StateContext<AccountStoreModel.AccountDataStore>) {
+    return setState(
+      patch<AccountStoreModel.AccountDataStore>(AccountStoreModel.defaults())
+    );
+  }
 
   @Action([AccountStorePayload.RequestAccountInfo])
   getAccountInfo({

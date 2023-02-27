@@ -25,8 +25,26 @@
   .area-info {
     grid-area: info;
 
-    .user-logo {
-      border-radius: 50%;
+    .profile-container {
+      position: relative;
+
+      .user-logo {
+        border-radius: 50%;
+        width: 52px;
+        height: 52px;
+        border: 2px solid #165c7c;
+      }
+
+      .icon-menu {
+        position: absolute;
+        bottom: -12px;
+        right: -9px;
+        margin: 10px;
+        color: #165c7c;
+        font-size: 26px;
+        height: 26px;
+        width: 26px;
+      }
     }
 
     .label-chip {
@@ -35,6 +53,8 @@
       padding: 6px 12px;
       border: 2.5px solid #165c7c;
       border-radius: 20px;
+      width: 90px;
+      text-align: center;
 
       .chip-text {
         color: #165c7c;
@@ -46,17 +66,28 @@
   }
 }
 
-.notification {
-  margin-top: 5px;
+.notification-icon {
+  font-size: 42px;
+  height: 42px;
+  width: 42px;
+}
 
-  .notification-icon {
-    font-size: 32px;
-  }
+:host ::ng-deep .notification .mat-icon {
+  line-height: 42px;
 }
 
 :host ::ng-deep .mat-ripple {
   height: 38px;
   width: 38px;
-  left: calc(50% - 15px) !important;
+  left: calc(50% - 18px) !important;
   top: calc(50% - 19px) !important;
+}
+
+:host
+  ::ng-deep
+  .mat-badge-small.mat-badge-overlap.mat-badge-after
+  .mat-badge-content {
+  right: -2px;
+  top: 5px;
+  background-color: red;
 }

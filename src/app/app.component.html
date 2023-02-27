@@ -51,7 +51,9 @@
     </ng-container>
 
     <ng-container footer>
-      <ailos-footer></ailos-footer>
+      <ailos-footer
+        [hasValidData]="!hasInvalidData && accountInfo"
+      ></ailos-footer>
     </ng-container>
   </ailos-page>
 </ng-template>

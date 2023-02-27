@@ -1,0 +1,23 @@
+.primary-button {
+  background-color: #165c7d;
+  color: #f8fafb;
+  border: none;
+  height: 48px;
+  width: 212px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.outline-button {
+  background-color: #f8fafb;
+  color: #165c7d;
+  border: 2px solid #165c7d;
+  height: 48px;
+  width: 212px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+}

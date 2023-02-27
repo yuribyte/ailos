@@ -13,28 +13,28 @@
     </div>
   </mat-card>
 
-  <form class="search-form" [formGroup]="form">
-    <mat-form-field class="me-3" appearance="outline">
-      <mat-label>CPF</mat-label>
-      <input
-        class="form-input"
-        type="text"
-        [imask]="mask"
-        matInput
-        formControlName="cpf"
-        placeholder="000.000.000-00"
-      />
+  <form class="search-form" [formGroup]="form" (keyup)="(form.invalid)">
+    <div class="form-input-container d-flex">
+      <div class="search-container">
+        <label class="form-label">CPF</label> <br />
+        <input
+          [ngClass]="{ 'form-invalid-input': form.invalid && form.touched }"
+          class="form-input me-3"
+          type="text"
+          [imask]="mask"
+          matInput
+          formControlName="cpf"
+          placeholder="000.000.000-00"
+        />
 
-      <mat-error> Informe um CPF válido </mat-error>
-    </mat-form-field>
+        <button (click)="handleSubmitForm()" class="primary-button">
+          {{ buttonPlaceholder }}
+        </button>
 
-    <button
-      mat-flat-button
-      [disabled]="form.invalid"
-      (click)="handleSubmitForm()"
-      color="primary"
-    >
-      {{ buttonPlaceholder }}
-    </button>
+        <div class="label-error" *ngIf="form.invalid && form.touched">
+          Informe um CPF válido
+        </div>
+      </div>
+    </div>
   </form>
 </div>

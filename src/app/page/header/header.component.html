@@ -24,7 +24,7 @@
       matBadgeColor="warn"
       matBadgeSize="small"
     >
-      <mat-icon class="notification-icon"> notifications </mat-icon>
+      <mat-icon class="notification-icon"> notifications_none </mat-icon>
     </button>
 
     <div class="label-chip">
@@ -33,6 +33,12 @@
       </span>
     </div>
 
-    <img class="user-logo" [src]="'https://via.placeholder.com/75?text=USER'" />
+    <div class="profile-container">
+      <img
+        class="user-logo"
+        [src]="'https://via.placeholder.com/75?text=USER'"
+      />
+      <mat-icon class="icon-menu"> settings </mat-icon>
+    </div>
   </div>
 </mat-card>

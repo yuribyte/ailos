@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: 100px min-content 1fr;
   grid-template-columns: auto;
-  gap: 1rem;
+  gap: 1.5rem;
   grid-template-areas:
     '  navigation  '
     '  search      '

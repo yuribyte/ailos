@@ -42,13 +42,24 @@
 
         .label-subtitle {
           color: #889499;
-          font-size: 10px;
+          font-size: 11px;
         }
       }
     }
 
     .area-actions {
       grid-area: action;
+
+      .simple-button {
+        color: #165c7d;
+        height: 35px;
+        width: 164px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+      }
     }
   }
 }

@@ -13,7 +13,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IMaskModule } from 'angular-imask';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConsultAccountCardComponent } from './components/consult-account-card/consult-account-card.component';
 import { ConsultSearchFormComponent } from './components/consult-search-form/consult-search-form.component';
@@ -43,7 +42,6 @@ import { SidemenuComponent } from './page/sidemenu/sidemenu.component';
   imports: [
     // * Angular Modules
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
