@@ -1,0 +1,40 @@
+<div class="consult-search-form-container">
+  <mat-card class="title-info mat-card-flat rounded-0 p-0">
+    <div class="card-label mb-4">
+      <div class="card-label-title mb-2">Informe o CPF do futuro cooperado</div>
+
+      <div class="card-label-subtitle">
+        Se necessário, você poderá duplicar uma conta existente ou pausar e
+        retornar este cadastro futuramente.
+        <div class="card-label-subtitle">
+          Digite apenas os números (sem pontos ou traços).
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+  <form class="search-form" [formGroup]="form">
+    <mat-form-field class="me-3" appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input
+        class="form-input"
+        type="text"
+        [imask]="mask"
+        matInput
+        formControlName="cpf"
+        placeholder="000.000.000-00"
+      />
+
+      <mat-error> Informe um CPF válido </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-flat-button
+      [disabled]="form.invalid"
+      (click)="handleSubmitForm()"
+      color="primary"
+    >
+      {{ buttonPlaceholder }}
+    </button>
+  </form>
+</div>

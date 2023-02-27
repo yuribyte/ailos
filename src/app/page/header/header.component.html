@@ -8,11 +8,7 @@
 
     <div class="area-navigation mt-2">
       <span *ngFor="let nav of navigationPath; let last = last">
-        <a
-          class="navigation-path"
-          disabled
-          [routerLink]="shouldNavigate ? [nav.linkURL] : ''"
-        >
+        <a class="navigation-path">
           {{ nav.linkName }} <span class="me-1" *ngIf="!last">/</span>
         </a>
       </span>
@@ -24,7 +20,7 @@
       class="notification"
       mat-icon-button
       color="primary"
-      [matBadge]="notificationCounter || 1"
+      matBadge="10"
       matBadgeColor="warn"
       matBadgeSize="small"
     >
@@ -33,13 +29,10 @@
 
     <div class="label-chip">
       <span class="chip-text text-uppercase">
-        {{ productLabel || 'placeholder' }}
+        {{ productLabel }}
       </span>
     </div>
 
-    <img
-      class="user-logo"
-      [src]="userLogo || 'https://via.placeholder.com/50?text=USER'"
-    />
+    <img class="user-logo" [src]="'https://via.placeholder.com/75?text=USER'" />
   </div>
 </mat-card>

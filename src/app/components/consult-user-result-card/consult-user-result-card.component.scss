@@ -1,0 +1,58 @@
+.consult-result-container {
+  width: 250px;
+  height: 150px;
+
+  .card-label-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .card-label-subtitle {
+    font-size: 13px;
+    font-weight: 400;
+    color: #889499;
+  }
+
+  .user-content {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content;
+    gap: 0.5rem 0;
+    grid-template-areas:
+      'icon label'
+      'icon label';
+
+    .area-icons {
+      grid-area: icon;
+      align-self: center;
+      row-gap: 1.5rem;
+
+      .icon-user {
+        color: #889499;
+      }
+
+      .icon-status {
+        color: #00c246;
+      }
+    }
+
+    .area-label {
+      grid-area: label;
+      row-gap: 10px;
+
+      .label-name,
+      .label-status {
+        color: #040f14;
+
+        .label-subtitle {
+          color: #889499;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep .mat-card {
+  border: 2px solid #a7b0b5;
+}

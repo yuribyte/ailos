@@ -1,4 +1,13 @@
-<ng-template #template [ngTemplateOutlet]="template">
+<ng-template
+  #template
+  [ngTemplateOutlet]="template"
+  [ngTemplateOutletContext]="{
+    accountInfo: accountInfo$ | async,
+    hasInvalidData: hasInvalidData$ | async
+  }"
+  let-accountInfo="accountInfo"
+  let-hasInvalidData="hasInvalidData"
+>
   <ailos-page>
     <ng-container header>
       <ailos-header></ailos-header>
@@ -6,12 +15,34 @@
 
     <ng-container content>
       <ailos-content>
-        <span>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate ad
-          repudiandae quidem expedita impedit harum accusantium voluptates dolor
-          reiciendis enim, temporibus aspernatur similique eaque. Modi omnis
-          labore sint provident minima
-        </span>
+        <ng-container content-navigation>
+          <ailos-navigation-stepper></ailos-navigation-stepper>
+        </ng-container>
+
+        <ng-container content-search>
+          <ailos-consult-search-form
+            (submitFormValue)="handleSelectAccount()"
+            (emitFormInvalidData)="handleInvalidData($event)"
+          ></ailos-consult-search-form>
+        </ng-container>
+
+        <ng-container content-result *ngIf="!hasInvalidData && accountInfo">
+          <ailos-consult-user-result
+            [userAccountInfo]="accountInfo"
+          ></ailos-consult-user-result>
+
+          <ailos-consult-account-card
+            [accountTitlePlaceholder]="'Conta Aplicação'"
+            [accountSubtitlePlaceholder]="'Coopertativa Viacredi'"
+            [userAccountNumber]="accountInfo?.applicationAccountNumber"
+          ></ailos-consult-account-card>
+
+          <ailos-consult-account-card
+            [accountTitlePlaceholder]="'Conta Corrente'"
+            [accountSubtitlePlaceholder]="'Coopertativa Viacredi'"
+            [userAccountNumber]="accountInfo?.checkinAccountNumber"
+          ></ailos-consult-account-card>
+        </ng-container>
       </ailos-content>
     </ng-container>
 

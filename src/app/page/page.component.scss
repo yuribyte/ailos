@@ -1,6 +1,6 @@
 .page-container {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 100px 1fr;
   grid-template-rows: 100px 1fr 100px;
   grid-template-areas:
     'sidemenu header'

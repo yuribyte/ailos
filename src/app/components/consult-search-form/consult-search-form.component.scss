@@ -1,0 +1,23 @@
+.card-label-title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.card-label-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: #889499;
+}
+
+.title-info {
+  background-color: transparent;
+}
+
+:host ::ng-deep .mat-form-field-outline {
+  background-color: #f8fafb;
+  border-radius: 5px;
+}
+
+:host ::ng-deep .mat-card-header-text {
+  margin: 0;
+}

@@ -1,7 +1,7 @@
 .sidemenu-card-container {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 100px 50px 1fr 450px;
+  grid-template-rows: 100px 20px min-content 1fr;
   grid-template-areas:
     'logo'
     '.'
@@ -16,6 +16,7 @@
   .area-icons {
     grid-area: icons;
     margin-right: 6px;
+    gap: 20px;
 
     .icon-menu {
       font-size: 32px;
@@ -23,10 +24,15 @@
       width: 32px;
       color: white;
     }
+
+    .main-icon {
+      color: #739db1;
+    }
   }
 
   .icon-logo {
     border-radius: 50%;
+    height: 65px;
   }
 }
 
