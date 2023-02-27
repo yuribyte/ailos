@@ -1,0 +1,43 @@
+<mat-card class="header-card-container mat-card-flat rounded-0 h-100 p-0 m-0">
+  <div
+    class="area-title ms-3 d-flex flex-column justify-content-between align-self-center"
+  >
+    <span class="title-label">
+      {{ pageTitle }}
+    </span>
+
+    <div class="area-navigation mt-2">
+      <span *ngFor="let nav of navigationPath; let last = last">
+        <a class="navigation-path">
+          {{ nav.linkName }} <span class="me-1" *ngIf="!last">/</span>
+        </a>
+      </span>
+    </div>
+  </div>
+
+  <div class="area-info d-flex justify-content-evenly align-items-center">
+    <button
+      class="notification"
+      mat-icon-button
+      color="primary"
+      matBadge="7"
+      matBadgeColor="warn"
+    >
+      <mat-icon class="notification-icon"> notifications_none </mat-icon>
+    </button>
+
+    <div class="label-chip">
+      <span class="chip-text text-uppercase">
+        {{ productLabel }}
+      </span>
+    </div>
+
+    <div class="profile-container">
+      <img
+        class="user-logo"
+        [src]="'https://via.placeholder.com/75?text=USER'"
+      />
+      <mat-icon class="icon-menu"> settings </mat-icon>
+    </div>
+  </div>
+</mat-card>

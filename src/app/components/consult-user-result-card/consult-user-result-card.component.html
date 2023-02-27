@@ -1,0 +1,27 @@
+<mat-card class="consult-result-container mat-card-flat rounded-0">
+  <div class="card-label mb-4">
+    <div class="card-label-title">Situação cadastral do CPF</div>
+    <div class="card-label-subtitle">Consulta da Receita Federal</div>
+  </div>
+
+  <div class="user-content">
+    <div class="area-icons d-flex flex-column align-items-center">
+      <mat-icon class="icon-user">person</mat-icon>
+      <mat-icon class="icon-status">check_circle_outline</mat-icon>
+    </div>
+
+    <div
+      class="area-label d-flex flex-column justify-content-between align-items-start"
+    >
+      <span class="label-name d-flex flex-column ms-3">
+        <span class="label-subtitle">Nome</span>
+        {{ userAccountInfo?.name || '--' }}
+      </span>
+
+      <span class="label-status d-flex flex-column ms-3">
+        <span class="label-subtitle">Situação do CPF</span>
+        {{ userAccountInfo?.status || '--' }}
+      </span>
+    </div>
+  </div>
+</mat-card>

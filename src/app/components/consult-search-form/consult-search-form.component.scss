@@ -1,0 +1,51 @@
+.card-label-title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.card-label-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: #889499;
+}
+
+.title-info {
+  background-color: transparent;
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+.form-input {
+  background-color: #f8fafb;
+  border: 2px solid #a7b0b5;
+  height: 30px;
+  width: 272px;
+  padding-left: 8px;
+  border-radius: 2px;
+  margin-top: 6px;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.form-invalid-input {
+  border: 2px solid #c13018;
+}
+
+.label-error {
+  color: #c13018;
+}
+
+.primary-button {
+  background-color: #165c7d;
+  color: #f8fafb;
+  border: none;
+  height: 35px;
+  width: 164px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 2px;
+}

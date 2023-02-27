@@ -1,0 +1,31 @@
+<mat-card class="consult-account-card-container mat-card-flat rounded-0">
+  <div class="card-label mb-4">
+    <div class="card-label-title">{{ accountTitlePlaceholder }}</div>
+    <div class="card-label-subtitle">{{ accountSubtitlePlaceholder }}</div>
+  </div>
+
+  <div class="consult-result">
+    <div class="area-icons d-flex flex-column align-items-center">
+      <mat-icon class="icon-card">credit_card</mat-icon>
+    </div>
+
+    <div
+      class="area-label d-flex flex-column justify-content-between align-items-start"
+    >
+      <span class="label-name d-flex flex-column ms-3">
+        <span class="label-subtitle">Número da conta</span>
+        {{ userAccountNumber || '--' }}
+      </span>
+    </div>
+
+    <div class="area-actions">
+      <button
+        matRipple
+        class="simple-button"
+        (click)="handleSubmitDuplicateAccount()"
+      >
+        Duplicar conta
+      </button>
+    </div>
+  </div>
+</mat-card>

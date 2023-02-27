@@ -1,0 +1,27 @@
+.content-container {
+  display: grid;
+  grid-template-rows: 100px min-content 1fr;
+  grid-template-columns: auto;
+  gap: 1.5rem;
+  grid-template-areas:
+    '  navigation  '
+    '  search      '
+    '  result      ';
+
+  .area-navigation {
+    grid-area: navigation;
+  }
+
+  .area-search {
+    grid-area: search;
+    align-self: end;
+    margin-left: 50px;
+  }
+
+  .area-result {
+    grid-area: result;
+    align-self: center;
+    margin-left: 50px;
+    gap: 1rem;
+  }
+}
