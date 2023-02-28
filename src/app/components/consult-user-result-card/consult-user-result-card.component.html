@@ -15,7 +15,7 @@
     >
       <span class="label-name d-flex flex-column ms-3">
         <span class="label-subtitle">Nome</span>
-        {{ userAccountInfo?.name || '--' }}
+        {{ (userAccountInfo?.name | mapTruncate) || '--' }}
       </span>
 
       <span class="label-status d-flex flex-column ms-3">
