@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { ConsultAccountCardComponent } from './components/consult-account-card/consult-account-card.component';
 import { ConsultSearchFormComponent } from './components/consult-search-form/consult-search-form.component';
 import { ConsultUserResultCardComponent } from './components/consult-user-result-card/consult-user-result-card.component';
+import { TruncatePipe } from './components/consult-user-result-card/truncate.pipe';
 import { NavigationStepperComponent } from './components/navigation-stepper/navigation-stepper.component';
 import { AccountService } from './core/services/account.service';
 import { AppStoreModule } from './core/state/store.module';
@@ -37,7 +38,8 @@ import { SidemenuComponent } from './page/sidemenu/sidemenu.component';
     ConsultSearchFormComponent,
     ConsultUserResultCardComponent,
     ConsultAccountCardComponent,
-    NavigationStepperComponent
+    NavigationStepperComponent,
+    TruncatePipe
   ],
   imports: [
     // * Angular Modules
@@ -71,4 +73,4 @@ import { SidemenuComponent } from './page/sidemenu/sidemenu.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
