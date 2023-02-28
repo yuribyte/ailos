@@ -36,7 +36,7 @@ export class ConsultSearchFormComponent implements OnInit {
     max: 11
   };
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder) { }
 
   validateElevenDigits(control: FormControl) {
     const value = control.value;
@@ -52,9 +52,9 @@ export class ConsultSearchFormComponent implements OnInit {
   handleSubmitForm() {
     this.form.markAsTouched();
 
-    const hasInvalidData = isNaN(this.form.value.cpf);
+    const hasValidData = isNaN(this.form.value.cpf);
 
-    if (hasInvalidData) {
+    if (hasValidData && this.form.valid) {
       this.submitFormValue.emit(Number(this.form.value));
     }
   }
